@@ -18,18 +18,9 @@ public class ArrayGenerator {
 
     private static void start() {
         int[] array = createArray(inputN());
-        Arrays.sort(array);
         System.out.println("Сгенерирован массив из " + array.length + " двузначных чисел");
-        System.out.println("Наименьшее число: " + array[0] + "\nНаибольшее число: " + array[array.length-1]);
+        System.out.println("Наименьшее число: " + getMin(array) + "\nНаибольшее число: " + getMax(array));
 
-        }
-
-    private static int[] createArray(int n) {
-        int[] ar = new int[n];
-        Random random = new Random();
-        for (int i = 0; i < n; i++)
-            ar[i] = random.nextInt(90) + 10;
-        return ar;
     }
 
     private static int inputN() {
@@ -48,5 +39,23 @@ public class ArrayGenerator {
             }
         }
         return k;
+    }
+
+    private static int[] createArray(int n) {
+        int[] ar = new int[n];
+        Random random = new Random();
+        for (int i = 0; i < n; i++)
+            ar[i] = random.nextInt(90) + 10;
+        return ar;
+    }
+
+    private static int getMin(int[] ar){
+        Arrays.sort(ar);
+        return ar[0];
+    }
+
+    private static int getMax(int[] ar){
+        Arrays.sort(ar);
+        return ar[ar.length - 1];
     }
 }
