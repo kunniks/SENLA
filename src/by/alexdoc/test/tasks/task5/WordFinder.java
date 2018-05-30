@@ -1,4 +1,6 @@
-package task5;
+package by.alexdoc.test.tasks.task5;
+
+import by.alexdoc.test.tasks.Task;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,12 +11,10 @@ import java.io.InputStreamReader;
 Текст и слово вводится вручную.
 */
 
-public class WordFinder {
-	public static void main(String[] args) {
-		start();
-	}
+public class WordFinder implements Task {
 
-	private static void start() {
+	@Override
+	public void start() {
 		String[] text = getTextAndWord();
 		System.out.println("Слово (или сочетание) \"" + text[1] + "\" встречается в тексте " + findWord(text[0], text[1]) + " раз(а)");
 	}
@@ -22,8 +22,8 @@ public class WordFinder {
 	private static int findWord(String t, String w) {
 		// метод засчитывает не только совпадение слов, но и когда искомое слово встречается в тексте
 		// как часть большого слова, например, "красн" в словах "прекрасный", "красный" и "покраснение"
-		int count=0;
-		if(!t.contains(w)) // проверим, может, слово не встречается?
+		int count = 0;
+		if (!t.contains(w)) // проверим, может, слово не встречается?
 			return count;
 
 		t = t.toLowerCase();
@@ -45,7 +45,7 @@ public class WordFinder {
 		try {
 			for (int i = 0; i < 2; i++) {
 				while (true) {
-					System.out.print("Введите параметр №" + (i+1) + ": ");
+					System.out.print("Введите параметр №" + (i + 1) + ": ");
 					input[i] = reader.readLine();
 					if (input[i].isEmpty() || input[i].matches("\\s+"))
 						System.out.println("Ошибка ввода - пустая строка. Попробуйте снова");
@@ -53,9 +53,9 @@ public class WordFinder {
 						break;
 				}
 			}
-		} catch(IOException e){
-				System.out.println("Произошла ошибка. Проверьте введенные данные и попробуйте снова");
-			}
+		} catch (IOException e) {
+			System.out.println("Произошла ошибка. Проверьте введенные данные и попробуйте снова");
+		}
 		return input;
 	}
 }

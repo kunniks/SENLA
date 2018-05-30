@@ -1,4 +1,6 @@
-package task3;
+package by.alexdoc.test.tasks.task3;
+
+import by.alexdoc.test.tasks.Task;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,12 +11,9 @@ import java.io.InputStreamReader;
 Слово для проверки вводится вручную во время выполнения программы.
  */
 
-public class PalindromeWord {
-    public static void main(String[] args) {
-        start();
-    }
-
-    private static void start() {
+public class PalindromeWord implements Task {
+    @Override
+    public void start() {
 
         String input = getWord();
         if(input == null)

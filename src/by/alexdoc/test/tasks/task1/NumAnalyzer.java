@@ -1,4 +1,6 @@
-package task1;
+package by.alexdoc.test.tasks.task1;
+
+import by.alexdoc.test.tasks.Task;
 
 import java.math.BigInteger;
 import java.util.Scanner;
@@ -14,13 +16,9 @@ import java.util.Scanner;
 Отрицательные, нецелые числа и (как правило) ноль к натуральным не относят.
 */
 
-public class NumAnalyzer {
-
-    public static void main (String [] args){
-        start();
-    }
-
-    private static void start() {
+public class NumAnalyzer implements Task {
+    @Override
+    public void start() {
         analyzeInt(inputN());
     }
 
@@ -28,7 +26,7 @@ public class NumAnalyzer {
         Scanner input = new Scanner(System.in);
         int k;
         while (true) {
-            System.out.print("Введите число любое целое число: ");
+            System.out.print("Введите любое целое число: ");
             try {
                 k = Integer.parseInt(input.nextLine());
                 break;

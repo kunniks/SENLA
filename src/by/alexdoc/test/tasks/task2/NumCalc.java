@@ -1,4 +1,6 @@
-package task2;
+package by.alexdoc.test.tasks.task2;
+
+import by.alexdoc.test.tasks.Task;
 
 import java.util.Scanner;
 
@@ -14,13 +16,9 @@ import java.util.Scanner;
 
 */
 
-public class NumCalc {
-
-    public static void main (String [] args) {
-        start();
-    }
-
-    private static void start() {
+public class NumCalc implements Task {
+	@Override
+    public void start() {
         int[] x = inputNum();
         // Вычислим и выведем на экран сумму и разность
         System.out.println("Сумма введенных чисел: " + (x[0] + x[1]));
