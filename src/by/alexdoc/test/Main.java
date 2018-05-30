@@ -20,6 +20,7 @@ import static by.alexdoc.test.utils.NumberUtils.userChoice;
 Он создан для того, чтобы облегчить проверку заданий (задания запускаются отсюда вводом номера задания).
 Автор: Алейник Александр Вячеславович, г. Гродно
  */
+
 public class Main {
 
 	public static void main(String[] args) {
