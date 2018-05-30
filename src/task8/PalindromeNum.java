@@ -39,7 +39,7 @@ public class PalindromeNum {
                 else
                     throw new NumberFormatException();
             } catch (NumberFormatException e) {
-                    System.out.println("Ошибка! Введенное число не соответствует условиям. Попробуйте еще раз.");
+                    System.out.println("Ошибка! Введенные данные не соответствуют условиям. Попробуйте еще раз.");
             }
         }
         return k;
