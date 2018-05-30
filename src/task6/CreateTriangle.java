@@ -62,5 +62,4 @@ public class CreateTriangle {
         }
         return array;
     }
-
 }
