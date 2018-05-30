@@ -23,7 +23,7 @@ public class EvenNumCalc {
         Scanner input = new Scanner(System.in);
         int k;
         while (true) {
-            System.out.print("Введите число N: ");
+            System.out.print("Введите любое целое положительное число: ");
             try {
                 k = Integer.parseInt(input.nextLine());
                 if (k >= 0 ) // допускаем, что последовательность может состоять из 1 элемента, иначе заменить на k>0
@@ -31,11 +31,12 @@ public class EvenNumCalc {
                 else
                     throw new NumberFormatException();
             } catch (NumberFormatException e) {
-                System.out.println("Ошибка! Принимается только натуральное число. Попробуйте снова.");
+                System.out.println("Ошибка! Принимается только целое положительное число. Попробуйте снова.");
             }
         }
         return k;
     }
+
     private static void printEven(int k) {
         //первое четное число в нашей последовательности всегда ноль, от него и будем считать
         for (int i = 0; i <= k; i+=2) {
@@ -43,6 +44,7 @@ public class EvenNumCalc {
         }
         System.out.println();
     }
+
     private static int calcEvenSum(int k) {
         //первое четное число в нашей последовательности всегда ноль, от него и будем считать
         int sum = 0;

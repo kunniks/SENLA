@@ -8,7 +8,7 @@ import java.util.Scanner;
 из 3-х введенных пользователем цифр. Цифры вводятся вручную.
 */
 public class NumCombinator {
-    public static void main(String[] args) {
+	public static void main(String[] args) {
         start();
     }
 
@@ -23,26 +23,6 @@ public class NumCombinator {
         } else
             System.out.println("невозможно составить трехзначное число");
 
-    }
-
-    private static void printCombs(HashSet<Integer> hs) {
-        for (Integer x : hs)
-            System.out.print(x + ", ");
-        System.out.println("\nколичество комбинаций: " + hs.size());
-    }
-
-    private static HashSet<Integer> combinator(int [] a) {
-        HashSet<Integer> hs = new HashSet<>();
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                for (int k = 0; k < 3; k++) {
-                    int temp = a[i] * 100 + a[j] * 10 + a[k];
-                    if (temp > 99 && temp < 1000)
-                        hs.add(temp);
-                }
-            }
-        }
-        return hs;
     }
 
     private static int[] inputNum() {
@@ -69,4 +49,25 @@ public class NumCombinator {
 
         return array;
     }
+
+    private static void printCombs(HashSet<Integer> hs) {
+        for (Integer x : hs)
+            System.out.print(x + ", ");
+        System.out.println("\nколичество комбинаций: " + hs.size());
+    }
+
+    private static HashSet<Integer> combinator(int [] a) {
+        HashSet<Integer> hs = new HashSet<>();
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                for (int k = 0; k < 3; k++) {
+                    int temp = a[i] * 100 + a[j] * 10 + a[k];
+                    if (temp > 99 && temp < 1000)
+                        hs.add(temp);
+                }
+            }
+        }
+        return hs;
+    }
+
 }
