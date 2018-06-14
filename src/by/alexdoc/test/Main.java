@@ -12,9 +12,9 @@ import by.alexdoc.test.tasks.task7.ArrayGenerator;
 import by.alexdoc.test.tasks.task8.PalindromeNum;
 import by.alexdoc.test.tasks.task9.EvenNumCalc;
 
-import java.util.Scanner;
+import by.alexdoc.test.utils.NumberUtils;
 
-import static by.alexdoc.test.utils.NumberUtils.userChoice;
+import java.util.Scanner;
 
 /* Это основной класс данного проекта.
 Он создан для того, чтобы облегчить проверку заданий (задания запускаются отсюда вводом номера задания).
@@ -31,7 +31,7 @@ public class Main {
 
 		while (!exit) {
 			System.out.print("Введите номер задания (целое число от 1 до 10 включительно): ");
-			i = userChoice(input.nextLine(), -1);
+			i = NumberUtils.userChoice(input.nextLine(), -1);
 
 			switch (i) {
 				case 1:
